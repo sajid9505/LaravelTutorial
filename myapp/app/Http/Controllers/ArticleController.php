@@ -21,14 +21,14 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id){
         $article = Article::findOrFail($id);
-        $article->$update($request->all());
+        $article->update($request->all());
         
         return $article;
     }
 
     public function delete(Request $request, $id){
         $article = Article::findOrFail($id);
-        $article->$delete();
+        $article->delete();
         
         return 204;
 

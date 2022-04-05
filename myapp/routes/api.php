@@ -21,23 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('articles', "App\Http\Controllers\ArticleController@index");
 
-Route::get('articles/{id}', function($id){
-    return Article::find($id);
-});
+Route::get('articles/{id}', "App\Http\Controllers\ArticleController@show");
 
-Route::post('articles', function(Request $request){
-    return Article::create($request->all);
-});
+Route::post('articles', "App\Http\Controllers\ArticleController@store");
 
-Route::put('articles/{id}', function(Request $request, $id){
-    $article = Article::findOrFail($id);
-    $article->update($request->all());
-});
+Route::put('articles/{id}', "App\Http\Controllers\ArticleController@update");
 
-Route::delete('articles/{id}', function($id){
-    Article::find($id)->delete();
-
-    return 204;
-});
-
+Route::delete('articles/{id}', "App\Http\Controllers\ArticleController@delete");
 

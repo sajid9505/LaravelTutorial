@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use app\Models\Article;
+use App\Models\Article;
+
 
 class ArticlesTableSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class ArticlesTableSeeder extends Seeder
     {
         Article::truncate();
 
-        $faker = \Faker\Facrtory::create();
+        $faker = \Faker\Factory::create();
 
         //creating dummy articles
         for ($i=0; $i<50; $i++){
